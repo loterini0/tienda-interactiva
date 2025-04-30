@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    color: #ba862c;
+}
+
+select{
+    text-align: center;
+}
+
+button{
+    text-align: center;
+}
+
+.card:hover{
+    color:green;
+
+}

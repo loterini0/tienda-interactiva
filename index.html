@@ -7,33 +7,75 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Tornillos y Mas</h1>
+<body onload="init()">
+    <h1 class="text-center text-warning">Tornillos y Más</h1>
 
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Productos</option>
-        <option value="1">Herramientas</option>
-        <option value="2">Pinturas</option>
-        <option value="3">Herrajes</option>
-    </select>
-    <div class="card" style="width: 18rem;">
-        <img src="imagenes/martillo-con-mango-de-madera-cabeza-conica-stanley-51271.jpg" class="card-img-top" alt="Martillo">
-        <div class="card-body">
-        <h5 class="card-title">Martillo</h5>
-        <p class="card-text">Martillo de hierro con mango de madera</p>
-        <a href="#" class="btn btn-primary">Mas Informacion</a>
-        <button type="button" class="btn btn-info">Añadir al Carrito</button>
+    
+    <div class="mb-3 text-center">
+        <label for="categoriaSelect" class="form-label">Selecciona una categoría:</label>
+        <select id="categoriaSelect" class="form-select w-50 mx-auto" onchange="filtrarCategoria()">
+            <option value="todos">Todos</option>
+            <option value="herramientas">Herramientas</option>
+            <option value="pinturas">Pinturas</option>
+        </select>
+    </div>
+
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-12 col-md-4 card herramientas" style="width: 18rem;">
+                <img src="imagenes/martillo-con-mango-de-madera-cabeza-conica-stanley-51271.jpg" class="card-img-top" alt="Martillo">
+                <div class="card-body">
+                    <h5 class="card-title">Martillo</h5>
+                    <p class="card-text">Martillo de hierro con mango de madera.</p>
+                    <a href="#" class="btn btn-primary">Más Información</a>
+                    <button type="button" onclick="agregarAlCarrito('Martillo')" class="btn btn-info">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            
+            <div class="col-12 col-md-4 card herramientas" style="width: 18rem;">
+                <img src="imagenes/metro.jfif" class="card-img-top" alt="Cinta Métrica">
+                <div class="card-body">
+                    <h5 class="card-title">Cinta Métrica</h5>
+                    <p class="card-text">Cinta métrica de 5 metros para medir con precisión.</p>
+                    <a href="#" class="btn btn-primary">Más Información</a>
+                    <button type="button" onclick="agregarAlCarrito('Cinta Métrica')" class="btn btn-info">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            
+            <div class="col-12 col-md-4 card pinturas" style="width: 18rem;">
+                <img src="imagenes/pintura-acrilica-al-frio-franco-arte-60-ml-azul-electrico.jpg" class="card-img-top" alt="Pintura Acrílica">
+                <div class="card-body">
+                    <h5 class="card-title">Pintura Acrílica</h5>
+                    <p class="card-text">Pintura acrílica de alta calidad para interiores y exteriores, resistente a la humedad.</p>
+                    <a href="#" class="btn btn-primary">Más Información</a>
+                    <button type="button" onclick="agregarAlCarrito('Pintura Acrílica')" class="btn btn-info">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            
+            <div class="col-12 col-md-4 card pinturas" style="width: 18rem;">
+                <img src="imagenes/20240903112338-Pinturas-Para-Interior-BARNIZ-PARA-MADERA-14-GL-97202409031123381026.jpg" class="card-img-top" alt="Barniz para Madera">
+                <div class="card-body">
+                    <h5 class="card-title">Barniz para Madera</h5>
+                    <p class="card-text">Barniz transparente para proteger y dar brillo a la madera, ideal para muebles y pisos.</p>
+                    <a href="#" class="btn btn-primary">Más Información</a>
+                    <button type="button" onclick="agregarAlCarrito('Barniz para Madera')" class="btn btn-info">Añadir al Carrito</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="text-center mt-4">
+        <h4>Productos en carrito: <span id="contadorCarrito">0</span></h4>
+    </div>
+
+
     
-
-
-
-
-
-
-
-
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>

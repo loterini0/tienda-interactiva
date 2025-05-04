@@ -1,5 +1,5 @@
 h1{
-    text-align: center;
+
     color: #ba862c;
 }
 
@@ -13,5 +13,10 @@ button{
 
 .card:hover{
     color:green;
+    
 
+}
+
+.card {
+    margin: 10px;
 }
